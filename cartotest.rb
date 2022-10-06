@@ -5,34 +5,16 @@
 class Cartotest < Formula
   desc "CLI to test Cartographer Templates"
   homepage "https://cartographer.sh/"
-  version "0.5.4"
+  version "0.5.5"
   license "Apache-2.0"
+  depends_on :macos
 
   on_macos do
-    url "https://github.com/waciumawanjohi/cartographer/releases/download/v0.5.4/cartotest_0.5.4_darwin_all.tar.gz"
-    sha256 "9697c6a8e741e61d73b946fa608e9811cf33da32822a6479348d59dc15740ceb"
+    url "https://github.com/waciumawanjohi/cartographer/releases/download/v0.5.5/cartotest_0.5.5_darwin_all.tar.gz"
+    sha256 "5aaef12b54b04f9b02d65b81c4ba8086ed2e3b062621c455109568b1cbd42771"
 
     def install
       bin.install "cartotest"
-    end
-  end
-
-  on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/waciumawanjohi/cartographer/releases/download/v0.5.4/cartotest_0.5.4_linux_arm64.tar.gz"
-      sha256 "c076505a4df5fa2965dafbcfde95cddcf660c1d9e43dd0bd1c516e8848390b29"
-
-      def install
-        bin.install "cartotest"
-      end
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/waciumawanjohi/cartographer/releases/download/v0.5.4/cartotest_0.5.4_linux_amd64.tar.gz"
-      sha256 "6b36f586f71460fa082f7126f40a2044b169c4007eb5cb5d1c6606225208ff06"
-
-      def install
-        bin.install "cartotest"
-      end
     end
   end
 end
